@@ -1,0 +1,1 @@
+Repository used for saving code snippets I found useful.
