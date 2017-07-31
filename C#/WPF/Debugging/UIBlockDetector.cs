@@ -6,7 +6,7 @@ using System.Windows.Threading;
 
 
 ///<summary>
-///Class used for finding where a UI Lock comes from. Breaks once the UI is locked for longer than maxFreezeTimeInMilliseconds
+///Class used for finding where a UI lock comes from. Breaks once the UI is locked for longer than maxFreezeTimeInMilliseconds
 ///The thread can then be found in the threads window.
 ///Found here: https://stackoverflow.com/a/21411656
 ///</summary>
@@ -31,7 +31,7 @@ public class UIBlockDetector
             lock (sw)
             {
                 if (sw.ElapsedMilliseconds > maxFreezeTimeInMilliseconds)
-                    Debugger.Break;
+                    Debugger.Break();
             }
         }, null, TimeSpan.FromMilliseconds(0), TimeSpan.FromMilliseconds(10));
     }
